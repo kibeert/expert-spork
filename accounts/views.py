@@ -7,7 +7,8 @@ def signupview(request, *args, **kwargs ):
         if form.is_valid():
             form.save()
             #log the user in
-            return redirect("{% url 'articles' %}")
+            return redirect("articles")
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form' : form})
+
