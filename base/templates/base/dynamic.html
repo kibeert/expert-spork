@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul>
+    {% for item in data %}
+        <li>{{ item.field1 }} - {{ item.field2 }}</li>
+    {% endfor %}
+</ul>
+{% enblock %}
