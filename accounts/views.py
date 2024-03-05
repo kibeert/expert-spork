@@ -12,3 +12,5 @@ def signupview(request, *args, **kwargs ):
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form' : form})
 
+def loginview(request, *args, **kwargs):
+    pass
