@@ -6,7 +6,8 @@ def signupview(request, *args, **kwargs ):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user= form.save()
+            login(request, user)
             #log the user in
             return redirect("articles")
     else:
@@ -17,6 +18,8 @@ def loginview(request, *args, **kwargs):
     if request.method =="POST":
         form = AuthenticationForm(data = request.POST)
         if form.is_valid():
+            user  = form.get_user()
+            login(request, user)
             return redirect("articles")  
     else:
         form = AuthenticationForm()
