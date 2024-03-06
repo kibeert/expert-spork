@@ -22,6 +22,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('articles/', views.article_view, name='articles'),
     path('dynamic/', views.dynamicpage, name='dynamic'),
+    path('create/', views.article_create, name='create'),
     path('article/<int:article_id>/', views.article_detail, name='article_detail'),
 
     

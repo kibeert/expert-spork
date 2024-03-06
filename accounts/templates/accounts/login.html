@@ -4,7 +4,9 @@
     <form class="site-form" action="{% url 'accounts:login' %}" method="post">
         {% csrf_token %}
         {{ form }} <br>
-        {{ form.user }}
+        {% if request.GET.next %}
+        <input type="hidden" name="next", value="{{ request.Get}.next}">
+        {% endif %}
         <input type="submit" value="Login">
     </form>
 {% endblock %}

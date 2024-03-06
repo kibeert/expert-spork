@@ -15,6 +15,7 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'articles' %}">Articles</a></li>
                 <li><a href="{% url 'accounts:login' %}">login</a></li>
+                <li><a href="{% url 'create' %}">Create</a></li>
                 <li>
                     <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                         {% csrf_token %}
