@@ -20,7 +20,7 @@ def loginview(request, *args, **kwargs):
         if form.is_valid():
             user  = form.get_user()
             login(request, user)
-            if'next' in request.POST:
+            if'next'in request.POST:
                 return redirect(request.POST.get('next'))
             
             else:
