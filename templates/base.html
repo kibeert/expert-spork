@@ -10,8 +10,19 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'articles' %}">Articles</a>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'articles' %}">Articles</a></li>
+                <li><a href="{% url 'accounts:login' %}">login</a></li>
+                <li>
+                    <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Log out</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
     </div>
     {% block content %}
     {% endblock %}
