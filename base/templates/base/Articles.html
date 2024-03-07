@@ -7,11 +7,11 @@
 <div class="articles">
     {% for article in articles %}
     <div class="article">
-        <h1><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a> - {{ article.author }} - {{ article.date }}</h1>
+        <h1><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a>  - {{ article.date }}</h1>
         <p>{{ article.slug }}</p>
         <p>{{ article.content }}</p>
         <p>{{ article.date_published }}</p>
-        <p>{{ article.author }}</p>
+        
         <img class="img1" src="{{ article.thumb.url}}" alt="">
     </div>
 
