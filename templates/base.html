@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <div class="navbar">
+    <header class="wrapper">
+        <h1><a href="{% url 'home' %}"><img src="{% static 'logo.png' %}" alt="djangonautic"></a></h1>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
@@ -17,7 +18,7 @@
                 
                 
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'create' %}">Create</a></li>
+                <li><a href="{% url 'create' %}" class="highlight">Create</a></li>
                 <li>
                     <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                         {% csrf_token %}
@@ -32,8 +33,9 @@
                 {% endif %}
             </ul>
         </nav>
-    </div>
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
+    </header>
+    
 </body>
 </html>
