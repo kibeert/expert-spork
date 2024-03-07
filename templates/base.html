@@ -14,7 +14,9 @@
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'articles' %}">Articles</a></li>
-                <li><a href="{% url 'accounts:login' %}">login</a></li>
+                
+                
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'create' %}">Create</a></li>
                 <li>
                     <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
@@ -22,6 +24,12 @@
                         <button type="submit">Log out</button>
                     </form>
                 </li>
+                
+                {% else %}
+                <li><a href="{% url 'accounts:login' %}">login</a></li>
+                <li><a href="{% url 'accounts:signup' %}">signup</a></li>
+
+                {% endif %}
             </ul>
         </nav>
     </div>
