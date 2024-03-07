@@ -3,9 +3,13 @@ body{
   background-image: url(stars.png);
   background-repeat: no-repeat;
   color: #fff;
+  margin: 0;
+  padding: 0;
+  
 }
 body *{
   font-family: Ubuntu;
+  
 }
 h1, h2, h3, h4, h5{
   font-weight: normal;
@@ -16,16 +20,16 @@ a, a:hover, a:visited{
   text-decoration: none;
 }
 .img1{
-  height: auto;
+  height: 30vh;
   width: 30vw;
 }
 .wrapper{
-  max-width: 960px;
+  max-width: 98vw !important;
   margin: 0 auto;
 }
 .wrapper h1{
   text-align: center;
-  margin: 100px auto;
+  margin: 50px auto;
   font-size: 2.8em;
 }
 header{
@@ -65,4 +69,21 @@ nav button{
 }
 .article h2{
   font-size: 1.6em
+}
+.site-form{
+  margin-top:60px;
+  border: 2px solid #00dba0;
+  padding: 20px;
+}
+.site-form input, .site-form textarea{
+  display: block;
+  margin: 20px 0 0 0 ;
+  padding: 10px;
+}
+a.highlight{
+  border: 1px solid #00dba0;
+  padding: 10px;
+  border-radius: 4px;
+  color: #00dba0;
+  
 }
