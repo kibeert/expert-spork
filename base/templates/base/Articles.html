@@ -3,8 +3,9 @@
 
 {% block content %}
 
-<h1>Articles</h1>
+
 <div class="articles">
+    <h1>Articles</h1>
     {% for article in articles %}
     <div class="article">
         <h2><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a>  - {{ article.date }}</h2>
